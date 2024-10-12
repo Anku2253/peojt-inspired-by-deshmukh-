@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,7 +9,8 @@
   <body class="bg-gray-100">
     <!-- Sidebar -->
     <div class="flex">
-      <aside class="w-64 h-screen bg-gray-800 text-white fixed">
+      <!-- Sidebar hidden on small screens -->
+      <aside class="w-64 h-screen bg-gray-800 text-white fixed hidden md:block">
         <div class="p-6">
           <h1 class="text-2xl font-bold mb-8">Navigation</h1>
           <ul class="space-y-6">
@@ -36,6 +36,7 @@
                 Home
               </a>
             </li>
+            <!-- Additional Links -->
             <li>
               <a
                 href="#"
@@ -58,100 +59,34 @@
                 Alumni
               </a>
             </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center p-2 text-lg hover:bg-gray-700 rounded-lg"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 mr-3"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 8c0-1.656 1.344-3 3-3h3M6 8h3c1.656 0 3-1.344 3-3m0 8c0 1.656-1.344 3-3 3H6m9-3h3c1.656 0 3 1.344 3 3M3 12h18"
-                  />
-                </svg>
-                Explore
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center p-2 text-lg hover:bg-gray-700 rounded-lg"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 mr-3"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-1 0h2a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2V9a2 2 0 012-2h2m4 0V3m-6 7l3 3m0 0l3-3m-3 3V4"
-                  />
-                </svg>
-                Campaign
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center p-2 text-lg hover:bg-gray-700 rounded-lg"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 mr-3"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 16v-1a4 4 0 014-4h10a4 4 0 014 4v1a2 2 0 01-2 2H5a2 2 0 01-2-2zM16 11a4 4 0 00-8 0"
-                  />
-                </svg>
-                Jobs
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="flex items-center p-2 text-lg hover:bg-gray-700 rounded-lg"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 mr-3"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 8c2.836 0 5 2.164 5 5s-2.164 5-5 5-5-2.164-5-5 2.164-5 5-5zm0 0c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zm9 12v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2a5 5 0 0110 0h6a5 5 0 012 0z"
-                  />
-                </svg>
-                Notification
-              </a>
-            </li>
+            <!-- More list items -->
           </ul>
         </div>
       </aside>
 
-      <!-- Main content with margin for the sidebar -->
-      <div class="ml-64 w-full">
+      <!-- Main content with responsive margin -->
+      <div class="md:ml-64 w-full">
+        <!-- Mobile menu button -->
+        <div class="bg-gray-800 text-white p-4 md:hidden">
+          <button id="menu-toggle" class="focus:outline-none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Header -->
         <header class="bg-white shadow">
           <div class="container mx-auto px-4 py-6">
             <h1 class="text-3xl font-bold text-gray-800">Support Center</h1>
@@ -180,23 +115,14 @@
                   password?'. You’ll receive an email with further instructions.
                 </p>
               </li>
-              <li>
-                <h3 class="font-semibold">How do I contact support?</h3>
-                <p class="text-gray-600">
-                  You can reach us via email at
-                  <a
-                    href="mailto:support@example.com"
-                    class="text-indigo-500 hover:underline"
-                    >support@example.com</a
-                  >.
-                </p>
-              </li>
+              <!-- Other FAQs -->
             </ul>
           </section>
 
           <!-- Help Articles Section -->
           <section class="bg-white p-6 rounded-lg shadow-md mb-8">
             <h2 class="text-xl font-bold mb-4">Help Articles</h2>
+            <!-- Responsive grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <article class="border p-4 rounded-lg">
                 <h3 class="font-bold">Getting Started with Our Platform</h3>
@@ -204,20 +130,10 @@
                   Learn how to set up your profile and get the most out of our
                   services.
                 </p>
-                <a href="#" class="text-indigo-500 hover:underline"
-                  >Read more</a
+                <a href="#" class="text-indigo-500 hover:underline">Read more</a
                 >
               </article>
-              <article class="border p-4 rounded-lg">
-                <h3 class="font-bold">Managing Your Account Settings</h3>
-                <p class="text-gray-600">
-                  Find out how to change your settings and update your account
-                  information.
-                </p>
-                <a href="#" class="text-indigo-500 hover:underline"
-                  >Read more</a
-                >
-              </article>
+              <!-- More articles -->
             </div>
           </section>
 
@@ -281,7 +197,15 @@
         </footer>
       </div>
     </div>
+
+    <!-- Toggle Sidebar Script -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const sidebar = document.querySelector("aside");
+
+      menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>
-
-
